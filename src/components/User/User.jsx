@@ -57,18 +57,7 @@ function User({userData}) {
     return (
         <div className={styles.layout}>
                 <div className={styles.profile}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none" className={styles.profilepic}>
-                        <g clip-path="url(#clip0_41_1056)">
-                            <rect width="50" height="50" rx="25" fill="#FCFCFC" />
-                            <circle cx="25" cy="20" r="8" fill="#D9D9D9" />
-                            <ellipse cx="25" cy="46.5" rx="20" ry="16.5" fill="#D9D9D9" />
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_41_1056">
-                                <rect width="50" height="50" rx="25" fill="white" />
-                            </clipPath>
-                        </defs>
-                    </svg>
+                  <img src={userData.picture} className={styles.profilepic}/>
                     <div className={styles.userInfo}>
                         <div className={styles.nickname}>{userData.name}</div>
                         <div className={styles.email}>{userData.email}</div>
