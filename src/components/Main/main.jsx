@@ -7,7 +7,6 @@ import subImage from './image/sub_image1.jpg';
 function Main() {
   return (
     <div>
-        {/*메인 화면1*/}
         <div className={styles.mainContainer}>
             <div className={styles.content}>
                 <div className={styles.titleText}>
