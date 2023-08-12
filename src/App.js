@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes, } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes, } from 'react-router-dom';
 import './App.css';
 import { LoginProvider } from './components/Layout/Header/Login/LoginContext';
 import Header from './components/Layout/Header/Header';
@@ -14,7 +14,7 @@ import { UserDataProvider } from './components/User/UserDataContext';
 function App() {
   return (
     <div className="App">
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router>
         <UserDataProvider>
           <LoginProvider>
             <Header />
