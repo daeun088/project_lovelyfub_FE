@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import styles from './Header.module.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Modal from './Login/Modal';
@@ -10,12 +10,8 @@ function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { setUserData } = useUserData();
   const location = useLocation();
-
-  useEffect(() => {
-    checkLoginStatus();
-  });
   
-  async function checkLoginStatus() {
+  const checkLoginStatus = useCallback(async() => {
     try {
       const userApiUrl = "http://ec2-3-39-210-13.ap-northeast-2.compute.amazonaws.com:8080/user";
 
@@ -45,10 +41,15 @@ function Header() {
   
       setIsLoggedIn(!!name);
       setUserData(data); // userData에 받아온 데이터를 설정합니다.
-    } catch (error) {
+    } 
+    catch (error) {
       console.error("오류가 발생했습니다.", error);
     }
-  }
+  }, [setUserData]);
+
+  useEffect(() => {
+    checkLoginStatus();
+  }, [checkLoginStatus]);
   
   function onOffModal() {
     setModalState(!modalState);
