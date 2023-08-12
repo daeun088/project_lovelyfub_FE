@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './main.module.scss';
-import mainImage from './image/main_image1.png'; // 이미지를 import 합니다.
+import mainpic from './image/main_image1.png'; // 이미지를 import 합니다.
 import subImage from './image/sub_image1.jpg';
 
 
@@ -19,7 +19,7 @@ function Main() {
                     </svg>
                     </div>
                 </div>
-            <img src={mainImage} alt="Main Image" className={styles.backgroundImage} />
+            <img src={mainpic} alt="Main" className={styles.backgroundImage} />
         </div>
         {/*푸드리퍼브 설명*/}
         <div className={styles.middleTitle}>
@@ -42,7 +42,7 @@ function Main() {
                         한국의 하루 평균 음식물 쓰레기는 약 1만 5900톤, <br/>그 중 57%가 유통과 조리과정에서 발생하고 있어요
                     </span>
                 </div>
-                <img src={subImage} className={styles.subImage} />
+                <img src={subImage} alt="sub" className={styles.subImage} />
                 <div className={styles.blockMainText}>
                     <p>이렇게 발생한 음식물 쓰레기는 <span className={styles.mainBold}>메탄가스를 배출</span>하고
                     <br/>이산화탄소와 함께 <span className={styles.mainBold}>지구온난화의 주범</span>이 돼요</p>

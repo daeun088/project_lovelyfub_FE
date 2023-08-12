@@ -24,7 +24,7 @@ function Mainbottom() {
                             </span>
                         </span>
                     </div>
-                    <img src={subImage2} className={styles.subImage} />
+                    <img src={subImage2} alt="sub" className={styles.subImage} />
                 </div>
 
                 <div className={styles.subBlock}>
@@ -38,7 +38,7 @@ function Mainbottom() {
                             </span>
                         </span>
                     </div>
-                    <img src={subImage3} className={styles.potatoImage} />
+                    <img src={subImage3} alt="sub" className={styles.potatoImage} />
                 </div>
 
                 <div className={styles.subBlock}>
@@ -52,7 +52,7 @@ function Mainbottom() {
                             </span>
                         </span>
                     </div>
-                    <img src={subImage4} className={styles.subImage} />
+                    <img src={subImage4} alt="sub" className={styles.subImage} />
                 </div>
 
             </span>

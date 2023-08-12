@@ -1,7 +1,5 @@
 import React, { forwardRef, useEffect, useRef } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 import styles from './Modal.module.scss';
-import axios from "axios";
 
 const Modal = forwardRef((props, ref) => {
     let wrapperRef = useRef();
@@ -11,7 +9,7 @@ const Modal = forwardRef((props, ref) => {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, []);
+    });
 
     const handleClickOutside = (event) => {
         if (wrapperRef && !wrapperRef.current.contains(event.target)) {
@@ -28,7 +26,7 @@ const Modal = forwardRef((props, ref) => {
     return (
         <div ref={wrapperRef}>
             <div className={styles.modal}>
-                <img src="logo.png" className={styles.logo} />
+                <img src="logo.png" alt="Logo" className={styles.logo} />
                 <div className={styles.subText}>가벼운 푸드리퍼브의 시작,</div>
                 <div className={styles.mainText}>러블리퍼브에 오신걸 환영해요</div>
                 <button onClick={handleNaverLogin} className={styles.naverButton}>

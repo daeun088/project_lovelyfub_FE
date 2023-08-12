@@ -7,17 +7,9 @@ function MarketModal({ closeModal, mapInstance, market, isModalOpen }) {
   const mapInstanceRef = useRef(null); // Separate ref for the map instance
   const [heartOnOff, setHeartOnOff] = useState(false);
   const [wishCount, setWishCount] = useState(808);
-  const [userLocation, setUserLocation] = useState(null);
   const [modalImage, setModalImage] = useState("");
   const [likeStores, setLikeStores] = useState([]);
   const { userData } = useUserData();
-
-  useEffect(() => {
-    if (userData) {
-      const userId = userData.id;
-      const userEmail = userData.email;
-    }
-  }, [userData]);
 
   // Function to toggle the heart icon state
   const heartOnOffHandler = () => {
@@ -32,7 +24,7 @@ function MarketModal({ closeModal, mapInstance, market, isModalOpen }) {
           "Content-Type" : "application/json",
         },
         body: JSON.stringify({
-          userid: 2,
+          userid: userData.id,
           storeid: storeId, 
         })
       })
@@ -41,7 +33,7 @@ function MarketModal({ closeModal, mapInstance, market, isModalOpen }) {
       fetch(`http://ec2-3-39-210-13.ap-northeast-2.compute.amazonaws.com:8080/likes/${userData.id}/${storeId}`, {
         method: "DELETE", 
         body: JSON.stringify({
-          user_id: 2,
+          user_id: userData.id,
           product_id: storeId,
         }),
       });
@@ -88,7 +80,7 @@ function MarketModal({ closeModal, mapInstance, market, isModalOpen }) {
         map: mapInstanceRef.current,
       });
     };
-  }, []);
+  }, [market]);
 
   useEffect(() => {
     // Check if the modal is closing
@@ -100,25 +92,6 @@ function MarketModal({ closeModal, mapInstance, market, isModalOpen }) {
     }
   }, []);
 
-
-  useEffect(() => {
-    // Get user's current location
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          setUserLocation(new window.naver.maps.LatLng(latitude, longitude));
-        },
-        (error) => {
-          console.error("Error getting user location:", error);
-          // Handle error if user location cannot be obtained
-        }
-      );
-    } else {
-      console.error("Geolocation is not supported by this browser.");
-      // Handle the case where geolocation is not supported
-    }
-  }, []);
 
   useEffect(() => {
     // cafe 데이터가 유효한 경우에만 실행
@@ -150,7 +123,7 @@ function MarketModal({ closeModal, mapInstance, market, isModalOpen }) {
       .then((data) => {
         if (data.likeStores && data.likeStores.length > 0) {
           // 찜한 가게 목록 설정
-          setLikeStores(data.likeStores);
+          setLikeStores(likeStores);
 
           // 현재 가게가 찜 목록에 있는지 여부 확인
           const isLiked = data.likeStores.some((likedStore) => likedStore.storeid === market.storeid);
@@ -165,7 +138,7 @@ function MarketModal({ closeModal, mapInstance, market, isModalOpen }) {
         setLikeStores([]);
         setHeartOnOff(false);
       });
-  }, [market]);
+  }, [market, likeStores]);
 
   useEffect(() => {
     // cafe 데이터가 유효한 경우에만 실행
@@ -226,7 +199,7 @@ function MarketModal({ closeModal, mapInstance, market, isModalOpen }) {
             </span>
 
         {/*모달창 내용*/}
-        <img src={modalImage} className={styles.modalImage} />
+        <img src={modalImage} alt={market?.name} className={styles.modalImage} />
             
             <div className={styles.modalTitle}>{market?.name}</div>
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none" className={styles.subIcon}>

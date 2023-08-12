@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import styles from "./MapList.module.scss";
 import CafeModal from "../Cafe/CafeModal";
 import axios from "axios";
@@ -7,13 +7,6 @@ function MapList({ restaurantList }) {
   const [selectedRestaurant, setSelectedRestaurant] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [heartOnOff, setHeartOnOff] = useState(false);
-  const mapInstance = useRef(null);
-
-  // CafeModal을 열고 닫는 함수를 정의합니다.
-  const toggleModal = (restaurant) => {
-    setSelectedRestaurant(restaurant);
-    setIsModalOpen(!isModalOpen);
-  };
 
   const handleCafeClick = (cafeId) => {
     axios
@@ -23,11 +16,6 @@ function MapList({ restaurantList }) {
         setIsModalOpen(true);
       })
       .catch((error) => console.error("Error fetching cafe:", error));
-  };
-  
-
-  const toggleHeart = () => {
-    setHeartOnOff(!heartOnOff);
   };
 
   if (!restaurantList) {

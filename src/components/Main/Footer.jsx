@@ -5,7 +5,7 @@ import logo from './image/logo.png'
 function Footer() {
     return (
         <div>
-        <img src={logo} className={styles.image} />
+        <img src={logo} alt="logo" className={styles.image} />
         <dr/>
         <div className={styles.title}>
             <p><span className={styles.color}>러블리퍼브</span>와 함께 지구를 위한

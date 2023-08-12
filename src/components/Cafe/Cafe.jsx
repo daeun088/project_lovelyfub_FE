@@ -6,7 +6,6 @@ import axios from "axios";
 function Cafe() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [cafes, setCafes] = useState([]);
-  const [userLocation, setUserLocation] = useState(null);
 
   const mapElement = useRef(null);
   const mapInstance = useRef(null);
@@ -16,25 +15,6 @@ function Cafe() {
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
-
-  useEffect(() => {
-    // Get user's current location
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const { latitude, longitude } = position.coords;
-          setUserLocation(new window.naver.maps.LatLng(latitude, longitude));
-        },
-        (error) => {
-          console.error("Error getting user location:", error);
-          // Handle error if user location cannot be obtained
-        }
-      );
-    } else {
-      console.error("Geolocation is not supported by this browser.");
-      // Handle the case where geolocation is not supported
-    }
-  }, []);
 
   useEffect(() => {
     axios
@@ -107,7 +87,7 @@ function Cafe() {
       <div className={styles.cafeContainer}>
         {cafes.map((cafe) => (
           <div key={cafe.id} className={styles.cafeList} onClick={() => handleCafeClick(cafe.id)}>
-            <img src={`/푸드리퍼브 가게 프로필/${cafe.profile}`} className={styles.productImage} />
+            <img src={`/푸드리퍼브 가게 프로필/${cafe.profile}`} alt="Cafe Profile" className={styles.productImage} />
             <div className={styles.productTitle}>{cafe.name}</div>
             <div className={styles.productText}>{cafe.description}</div>
           </div>

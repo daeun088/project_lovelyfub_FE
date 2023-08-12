@@ -6,7 +6,6 @@ import CafeModal from "../Cafe/CafeModal";
 
 function User({userData}) {
     const navigate = useNavigate();
-    const [userInfo, setUserInfo] = useState(null);
     const [likeStores, setLikeStores] = useState([]);
     const [selectedCafe, setSelectedCafe] = useState(null);
     const [heartOnOff, setHeartOnOff] = useState(false);
@@ -42,7 +41,6 @@ function User({userData}) {
           }
       
           const data = await response.json();
-          setUserInfo(data);
           setLikeStores(data.likeStores); // 찜한 가게들의 목록을 저장
         } catch (error) {
           console.error("오류가 발생했습니다.", error);
@@ -57,7 +55,7 @@ function User({userData}) {
     return (
         <div className={styles.layout}>
                 <div className={styles.profile}>
-                  <img src={userData.picture} className={styles.profilepic}/>
+                  <img src={userData.picture} alt="pic" className={styles.profilepic}/>
                     <div className={styles.userInfo}>
                         <div className={styles.nickname}>{userData.name}</div>
                         <div className={styles.email}>{userData.email}</div>
@@ -76,7 +74,7 @@ function User({userData}) {
                     {likeStores.map((store) => (
                       <div key={store.storeid} className={styles.cafeList} onClick={() => handleOpenCafeModal(store)}>
                         {/* 찜한 가게 정보 표시 (이미지, 이름 등) */}
-                        <img src={`/푸드리퍼브 가게 프로필/${store.profile}`} className={styles.productImage} />
+                        <img src={`/푸드리퍼브 가게 프로필/${store.profile}`} alt="store" className={styles.productImage} />
                         <div className={styles.productTitle}>{store.name}</div>
                         <div className={styles.productText}>{store.introduction}</div>
                       </div>
@@ -84,7 +82,7 @@ function User({userData}) {
                   </div>
                 ) : (
                 <div className={styles.notWishContainer}>
-                    <img src={process.env.PUBLIC_URL + "/nonwish.png"} className={styles.notWishImage} />
+                    <img src={process.env.PUBLIC_URL + "/nonwish.png"} alt="potato" className={styles.notWishImage} />
                     <div className={styles.notWishText}>아직 찜한 가게가 없어요<br /><span className={styles.notWishText2}>착한 가게를 찾아볼까요?</span></div>
                     <button onClick={handleClick} className={styles.button}>내 주변 가게 찾기</button>
                 </div>

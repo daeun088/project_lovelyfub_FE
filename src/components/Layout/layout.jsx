@@ -1,4 +1,3 @@
-import Header from "./Header/Header"
 import Menu from "./Menu/Menu"
 import styles from './layout.module.scss'
 

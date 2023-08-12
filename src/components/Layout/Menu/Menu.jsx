@@ -1,4 +1,4 @@
-import { NavLink, useLocation, useNavigate } from 'react-router-dom'
+import { NavLink, useLocation} from 'react-router-dom'
 import styles from './Menu.module.scss'
 
 const Menu = () => {

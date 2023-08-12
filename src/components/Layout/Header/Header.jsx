@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Header.module.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import Modal from './Login/Modal';
 import { useUserData } from '../../User/UserDataContext';
 
@@ -9,13 +8,13 @@ function Header() {
   const movePage = useNavigate();
   const [modalState, setModalState] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const { userData, setUserData } = useUserData(); // 유저 정보를 저장할 상태 추가
+  const { setUserData } = useUserData();
   const location = useLocation();
 
   useEffect(() => {
     checkLoginStatus();
-  }, []);
-
+  });
+  
   async function checkLoginStatus() {
     try {
       const userApiUrl = "http://ec2-3-39-210-13.ap-northeast-2.compute.amazonaws.com:8080/user";
