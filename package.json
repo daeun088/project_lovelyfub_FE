@@ -23,6 +23,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://lovelyfub.netlify.app",
+  
   "eslintConfig": {
     "extends": [
       "react-app",
