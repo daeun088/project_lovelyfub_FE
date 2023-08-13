@@ -18,9 +18,11 @@ const Modal = forwardRef((props, ref) => {
     };
 
     const handleNaverLogin = () => {
-        window.location.href = 'http://ec2-3-39-210-13.ap-northeast-2.compute.amazonaws.com:8080/oauth2/authorize/naver?redirect_uri=https://lovelyfub.netlify.app/oauth/redirect';
+        const redirectUri = encodeURIComponent(`https://lovelyfub.netlify.app${window.location.hash}`);
+        window.location.href = `http://ec2-3-39-210-13.ap-northeast-2.compute.amazonaws.com:8080/oauth2/authorize/naver?redirect_uri=${redirectUri}`;
         props.onLoginSuccess();
-    }
+      };
+      
     
 
     return (
