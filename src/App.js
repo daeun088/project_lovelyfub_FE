@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter as Router, Route, Routes, } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, } from 'react-router-dom';
 import './App.css';
 import { LoginProvider } from './components/Layout/Header/Login/LoginContext';
 import Header from './components/Layout/Header/Header';
