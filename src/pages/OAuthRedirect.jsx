@@ -6,7 +6,8 @@ const OAuthRedirect = () => {
  const location = useLocation(0);
  const queryString = location.search.replace('?accessToken=', '');
  const accessToken = 'Bearer ' + queryString;
- // 가져온 accessToken을 쿠키에 저장(보안적으로 가장 좋은 방법은 redux 등의 상태 관리 라이브러리를 사용하는 것입니다.)
+ // 가져온 accessToken을 쿠키에 저장
+ 
  let todayDate = new Date();
  todayDate.setDate(todayDate.getDate()+1);
  const expires = todayDate.toUTCString(); // 쿠키의 만료 일자 설정
