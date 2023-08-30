@@ -2,8 +2,8 @@
     display:flexbox;
     position: relative;
     z-index: 101;
-    width: 340px;
-    height: 230px;
+    width: 312px;
+    height: 214px;
     padding: 24px 31px;
     justify-content: center;
     align-items: center;
@@ -13,7 +13,7 @@
 }
 
 .logo {
-    width: 35%;
+    width: 40%;
     height: initial;
     flex-shrink: 0;
 }
@@ -22,10 +22,10 @@
     color: var(--email, #9F9F9F);
     text-align: center;
     font-family: 'SUIT-Regular';
-    font-size: 17px;
+    font-size: 14px;
     font-style: normal;
-    font-weight: 100;
-    line-height: 18px; /* 128.571% */
+    font-weight: 400;
+    line-height: 15px; /* 128.571% */
     letter-spacing: -0.7px;
     margin-bottom: 10px;
 }
@@ -37,7 +37,7 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
-    line-height: 20px;
+    line-height: 18px;
     letter-spacing: -0.8px;
     margin-bottom: 10px;
 }
@@ -56,7 +56,7 @@
     font-family: 'SUIT-Regular';
     font-size: 14px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 18px; /* 128.571% */
     letter-spacing: -0.7px;
     border : none;
