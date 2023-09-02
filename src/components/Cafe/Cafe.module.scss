@@ -6,13 +6,12 @@
 .title {
     color: var(--title, #101010);
     font-family: 'LeferiPoint-BlackA';
-    font-size: 25px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 700;
-    line-height: 30px; /* 122.222% */
+    line-height: 22px; /* 122.222% */
     letter-spacing: -1.26px;
     margin: 24px;
-    padding-top: 20px;
     text-align: left;
 }
 
@@ -45,19 +44,19 @@
     color: var(--title, #101010);
     text-align: center;
     font-family: 'LeferiPoint-BlackA';
-    font-size: 20px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: 18px;
     letter-spacing: -1.12px;
     text-align: left;
-    margin: 10px;
+    margin: 8px;
 }
 
 .productText {
     color: var(--main-txt, #737373);
     font-family: 'SUIT-Regular';
-    font-size: 13px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
