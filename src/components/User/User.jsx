@@ -28,7 +28,7 @@ function User({userData}) {
               accessToken = cookies[i].replace('AccessToken=', '');
             }
           }
-          const userApiUrl = `http://ec2-3-39-210-13.ap-northeast-2.compute.amazonaws.com:8080/mypage`;
+          const userApiUrl = `https://lovelyfub.com/mypage`;
           const response = await fetch(userApiUrl, {
             method: "GET",
             headers: {

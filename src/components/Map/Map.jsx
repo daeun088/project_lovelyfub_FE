@@ -37,7 +37,7 @@ function Map() {
 
   const handleMarkerClick = (cafeId) => {
     axios
-      .get(`http://ec2-3-39-210-13.ap-northeast-2.compute.amazonaws.com:8080/store/${cafeId}`)
+      .get(`https://lovelyfub.com/store/${cafeId}`)
       .then((response) => {
         setSelectedRestaurant(response.data);
         setIsModalOpen(true);
@@ -69,13 +69,13 @@ function Map() {
       const fetchRestaurants = async (latitude, longitude, map) => {
         try {
           const response = await fetch(
-            `http://ec2-3-39-210-13.ap-northeast-2.compute.amazonaws.com:8080/map?latitude=${latitude}&longitude=${longitude}`
+            `https://lovelyfub.com/map?latitude=${latitude}&longitude=${longitude}`
           );
           const data = await response.json();
     
           // 가게 목록 데이터를 받아온 후, 각 가게의 위도와 경도 정보를 추가로 불러옵니다.
           const restaurantPromises = data.map(async (restaurant) => {
-            const response = await axios.get(`http://ec2-3-39-210-13.ap-northeast-2.compute.amazonaws.com:8080/store/${restaurant.storeid}`);
+            const response = await axios.get(`https://lovelyfub.com/store/${restaurant.storeid}`);
             const storeData = response.data;
             return {
               ...restaurant,

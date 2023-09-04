@@ -10,7 +10,7 @@ function MapList({ restaurantList }) {
 
   const handleCafeClick = (cafeId) => {
     axios
-      .get(`http://ec2-3-39-210-13.ap-northeast-2.compute.amazonaws.com:8080/store/${cafeId}`)
+      .get(`https://lovelyfub.com/store/${cafeId}`)
       .then((response) => {
         setSelectedRestaurant(response.data);
         setIsModalOpen(true);
