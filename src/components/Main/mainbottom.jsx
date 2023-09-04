@@ -38,7 +38,7 @@ function Mainbottom() {
                             </span>
                         </span>
                     </div>
-                    <img src={subImage3} alt="sub" className={styles.potatoImage} />
+                    <img src={subImage3} alt="sub" className={styles.subImage} />
                 </div>
 
                 <div className={styles.subBlock}>
