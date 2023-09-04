@@ -13,7 +13,7 @@ function Header() {
   
   const checkLoginStatus = useCallback(async() => {
     try {
-      const userApiUrl = "http://ec2-3-39-210-13.ap-northeast-2.compute.amazonaws.com:8080/user";
+      const userApiUrl = "https://lovelfub.com/user";
 
       let accessToken ='';
       const cookies = document.cookie.split(';');
