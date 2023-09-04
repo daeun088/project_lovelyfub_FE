@@ -19,7 +19,7 @@ function Market() {
 
   useEffect(() => {
     axios
-      .get("http://ec2-3-39-210-13.ap-northeast-2.compute.amazonaws.com:8080/market?page=1&size=30")
+      .get("https://lovelyfub.com/market?page=1&size=30")
       .then((response) => {
         const extractedMarkets = response.data.data.map((market) => {
           return {
@@ -73,7 +73,7 @@ function Market() {
 
   const handleMarketClick = (marketId) => {
     axios
-      .get(`http://ec2-3-39-210-13.ap-northeast-2.compute.amazonaws.com:8080/store/${marketId}`)
+      .get(`https://lovelyfub.com/store/${marketId}`)
       .then((response) => {
         setSelectedMarket(response.data);
         setIsModalOpen(true);

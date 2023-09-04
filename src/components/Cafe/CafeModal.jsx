@@ -18,7 +18,7 @@ function CafeModal({ closeModal, mapInstance,  cafe, isModalOpen, heartOnOff, se
 
     if (!heartOnOff) {
       setWishCount(wishCount +1)
-      fetch("http://ec2-3-39-210-13.ap-northeast-2.compute.amazonaws.com:8080/likes", {
+      fetch("https://lovelyfub.com/likes", {
         method: "POST",
         headers : {
           "Content-Type" : "application/json",
@@ -30,7 +30,7 @@ function CafeModal({ closeModal, mapInstance,  cafe, isModalOpen, heartOnOff, se
       })
     } else if (heartOnOff) {
       setWishCount(wishCount -1)
-      fetch(`http://ec2-3-39-210-13.ap-northeast-2.compute.amazonaws.com:8080/likes/${userData.id}/${storeId}`, {
+      fetch(`https://lovelyfub.com/likes/${userData.id}/${storeId}`, {
         method: "DELETE", 
         body: JSON.stringify({
           user_id: userData.id,
@@ -50,7 +50,7 @@ function CafeModal({ closeModal, mapInstance,  cafe, isModalOpen, heartOnOff, se
         }
       }
 
-    fetch("http://ec2-3-39-210-13.ap-northeast-2.compute.amazonaws.com:8080/mypage", { 
+    fetch("https://lovelyfub.com/mypage", { 
       method: "GET",
       headers: {
         Authorization: `${accessToken}`,
