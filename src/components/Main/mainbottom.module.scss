@@ -79,17 +79,6 @@
     background: linear-gradient(to top, #FFC93C 30%, transparent 50%);
 }
 
-.mainBackground {
-    position: relative;
-    align-items: center;
-    width: 94%;
-    height:50%;
-    margin: 3%;
-    flex-shrink: 0;
-    border-radius: 16px;
-    background: url(./image/main_image2.png), lightgray 0px -43.773px / 100% 151.286% no-repeat;
-}
-
 .subImage {
     width:170px;
     height: 128px;
@@ -100,7 +89,7 @@
 .subBlock {
     position: relative;
     align-items: center;
-    height: 27%;
+    height: 288px;
     width: 94%;
     margin: 3%;
     flex-shrink: 0;
