@@ -13,7 +13,7 @@ function Header() {
   
   const checkLoginStatus = useCallback(async() => {
     try {
-      const userApiUrl = "https://lovelfub.com/user";
+      const userApiUrl = "https://lovelyfub.com/user";
 
       let accessToken ='';
       const cookies = document.cookie.split(';');
