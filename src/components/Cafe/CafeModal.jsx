@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./Cafe.module.scss";
 import { useUserData } from "../User/UserDataContext";
 
-function CafeModal({ closeModal, mapInstance,  cafe, isModalOpen, heartOnOff, setHeartOnOff }) {
+function CafeModal({ closeModal, mapInstance,  cafe, isModalOpen }) {
   const mapElement = useRef(null);
   const mapInstanceRef = useRef(null); // Separate ref for the map instance
-  //const [heartOnOff, setHeartOnOff] = useState(false);
+  const [heartOnOff, setHeartOnOff] = useState(false);
   const [wishCount, setWishCount] = useState(808);
   const [modalImage, setModalImage] = useState("");
   const [likeStores, setLikeStores] = useState([]);

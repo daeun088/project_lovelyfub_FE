@@ -1,37 +1,57 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./Cafe.module.scss";
 import CafeModal from "./CafeModal";
+//import MarketModal from "../Market/MarketModal";
 import axios from "axios";
 
 function Cafe() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [cafes, setCafes] = useState([]);
+  const [data, setData] = useState([]);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const mapElement = useRef(null);
   const mapInstance = useRef(null);
-  const [selectedCafe, setSelectedCafe] = useState(null);
-  const [heartOnOff, setHeartOnOff] =useState(false);
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
 
   useEffect(() => {
+    // Fetch data for both Cafe and Market here and combine them
     axios
-      .get("https://lovelyfub.com/cafe?page=1&size=30")
-      .then((response) => {
-        const extractedCafes = response.data.data.map((cafe) => {
-          return {
-            id: cafe.storeid,
-            name: cafe.name,
-            profile: cafe.profile,
-            description: cafe.introduction,
-            // Add other necessary fields as needed
-          };
-        });
-        setCafes(extractedCafes);
-      })
-      .catch((error) => console.error("Error fetching cafes:", error));
+      .all([
+        axios.get("https://lovelyfub.com/cafe?page=1&size=30"),
+        axios.get("https://lovelyfub.com/market?page=1&size=30"),
+      ])
+      .then(
+        axios.spread((cafeResponse, marketResponse) => {
+          const cafeData = cafeResponse.data.data.map((cafe) => {
+            return {
+              id: cafe.storeid,
+              name: cafe.name,
+              profile: cafe.profile,
+              description: cafe.introduction,
+              type: "cafe",
+            };
+          });
+
+          const marketData = marketResponse.data.data.map((market) => {
+            return {
+              id: market.storeid,
+              name: market.name,
+              profile: market.profile,
+              description: market.introduction,
+              type: "market",
+            };
+          });
+
+          // Combine the data from both endpoints
+          const combinedData = [...cafeData, ...marketData];
+
+          setData(combinedData);
+        })
+      )
+      .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
   useEffect(() => {
@@ -70,39 +90,41 @@ function Cafe() {
     };
   }, []);
 
-  const handleCafeClick = (cafeId) => {
+  const handleItemClick = (itemId) => {
     axios
-      .get(`https://lovelyfub.com/store/${cafeId}`)
+      .get(`https://lovelyfub.com/store/${itemId}`)
       .then((response) => {
-        setSelectedCafe(response.data);
+        setSelectedItem(response.data);
         setIsModalOpen(true);
       })
-      .catch((error) => console.error("Error fetching cafe:", error));
+      .catch((error) => console.error("Error fetching item:", error));
   };
 
   return (
     <div className={styles.layout}>
       <div className={styles.title}>푸드리퍼브 재료로<br />음식을 만드는 식당이에요</div>
-
       <div className={styles.cafeContainer}>
-        {cafes.map((cafe) => (
-          <div key={cafe.id} className={styles.cafeList} onClick={() => handleCafeClick(cafe.id)}>
-            <img src={`/푸드리퍼브 가게 프로필/${cafe.profile}`} alt="Cafe Profile" className={styles.productImage} />
-            <div className={styles.productTitle}>{cafe.name}</div>
-            <div className={styles.productText}>{cafe.description}</div>
+      {data.map((item) => (
+        <div key={item.id} className={styles.cafeList} onClick={() => handleItemClick(item.id)}>
+          <img
+            src={`/푸드리퍼브 가게 프로필/${item.profile}`}
+            alt={item.type === "cafe" ? "Cafe Profile" : "Market Profile"}
+            className={styles.productImage}
+          />
+          <div className={styles.productTitle}>{item.name}</div>
+          <div className={styles.productText}>{item.description}</div>
           </div>
-        ))}
+      ))}
       </div>
 
       {isModalOpen && (
-        <CafeModal
-          closeModal={handleCloseModal}
-          mapInstance={mapInstance}
-          cafe={selectedCafe}
-          isModalOpen = {isModalOpen}
-          heartOnOff={heartOnOff}
-          setHeartOnOff={setHeartOnOff}
-        />
+        // Render appropriate modal based on selectedItem.type
+          <CafeModal
+            closeModal={handleCloseModal}
+            mapInstance={mapInstance}
+            cafe={selectedItem}
+            isModalOpen={isModalOpen}
+          />
       )}
     </div>
   );
