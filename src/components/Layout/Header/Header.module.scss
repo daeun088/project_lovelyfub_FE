@@ -10,13 +10,27 @@
     align-items: center;
     flex-shrink: 0;
     z-index: 100;
+    background: #FFF;
+    box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.04);
 }
 
 .logo {
-    width: 90px;
-    height: 90px;
+    width: 200px;
+    height: 100%;
     flex-shrink: 0;
-    margin-left: 10px;
+    margin-left: 20px;
+    margin-top: 14px;
+    color: var(--yellow, var(--white, #FFC93C));
+    font-family: 'LOTTERIACHAB';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left
+}
+
+.logoorange {
+    color : #FF6F3C;
 }
 
 .contents {

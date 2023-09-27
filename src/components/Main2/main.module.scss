@@ -1,0 +1,109 @@
+.title {
+    color: var(--black, var(--title, #101010));
+    font-family: 'Pretendard-Regular';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: left;
+    padding: 24px;
+}
+
+.textBold{
+    font-weight: 700;
+}
+
+.lovelyText {
+    color: var(--gray-scale2, var(--main-txt, #737373));
+    font-family: 'Pretendard-Regular';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: left;
+    padding: 24px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.lovelyContainer{
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 14px;
+    display: grid;
+    margin: 12px;
+    grid-template-columns: repeat(5, 1fr);
+    overflow-x: scroll; /* 스크롤을 좌우로 움직이도록 설정합니다. */
+    overflow-y: hidden;
+    ::-webkit-scrollbar {
+        display: none; /* 스크롤바를 숨깁니다. */
+      }
+}
+
+.lovely{
+    width: 79px;
+    height: 79px;
+    border-radius: 79px;
+    border: 2px solid var(--orange, #FF6F3C);
+    background:lightgray 50% / cover no-repeat, var(--icon, #D9D9D9);
+}
+
+.feedContainer {
+    display: relative;
+    padding: 12px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+.profilePic{
+    width: 45px;
+    height: 45px;
+    fill: #cd1818;
+    border-radius: 50%;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10px;
+  }
+
+.nickname{
+    color: var(--black, var(--title, #101010));
+    font-family: 'Pretendard-Regular';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.gray {
+    color: var(--gray-scale, var(--email, #9F9F9F));
+}
+
+.time {
+    color: var(--gray-scale, var(--email, #9F9F9F));
+    font-family: 'Pretendard-Regular';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    right: 10px;
+}
+
+.feedImage {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    margin-top: 15px;
+    margin-bottom: 7px;
+}

@@ -69,7 +69,7 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.contents}>
         <div className={styles.logo}>
-          <img src={`${process.env.PUBLIC_URL}/logo.png`} className={styles.logo} alt="Logo" />
+          러블<span className={styles.logoorange}>리퍼브</span>
         </div>
 
         <nav className={styles.navigation}>

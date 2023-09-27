@@ -7,6 +7,7 @@ import Mainpage from './pages/Mainpage'
 import Marketpage from './pages/Marketpage'
 import Cafepage from './pages/Cafepage'
 import Mappage from './pages/Mappage';
+import Mainpage2 from './pages/Mainpage2'
 import Userpage from './pages/Userpage'
 import OAuthRedirect from './pages/OAuthRedirect';
 import { UserDataProvider } from './components/User/UserDataContext';
@@ -19,7 +20,8 @@ function App() {
           <LoginProvider>
             <Header />
             <Routes>
-              <Route path='/main' element={<Mainpage/>} />
+              <Route path='/main' element={<Mainpage2/>} />
+              <Route path='/main/2' element={<Mainpage/>} />
               <Route path='/market' element={<Marketpage/>}/>
               <Route path='/cafe' element={<Cafepage/>}/>
               <Route path='/map' element={<Mappage/>}/>
