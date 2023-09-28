@@ -1,3 +1,7 @@
+.layout{
+    background-color: rgb(255, 255, 255);
+}
+
 .title {
     color: var(--black, var(--title, #101010));
     font-family: 'Pretendard-Regular';
@@ -21,9 +25,7 @@
     font-weight: 500;
     line-height: normal;
     text-align: left;
-    padding: 24px;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding: 0px 24px;
 }
 
 .lovelyContainer{
@@ -106,4 +108,68 @@
     object-fit: cover;
     margin-top: 15px;
     margin-bottom: 7px;
+}
+
+.bottomBar {
+    display: flex;
+    width: 100%;
+    padding: 0px 12px;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.bookmark {
+    position: absolute;
+    right: 15px;
+}
+
+.score {
+    color: var(--white, #FFF);
+    font-family: 'Pretendard-Regular';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    align-items: flex-start;
+    display: flex;
+    margin: 0px 12px;
+}
+
+.feedText {
+    color: #000;
+    font-family: 'Pretendard-Regular';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    margin-left: 15px;
+    padding: 12px 0px;
+}
+
+.storeName{
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.coment {
+    width: 96%;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: #F2F2F2;
+    margin-left: 15px;
+}
+
+.comentText {
+    color: #CECECE;
+    text-align: center;
+    font-family: 'Pretendard-Regular';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    padding: 8px 10px;
 }

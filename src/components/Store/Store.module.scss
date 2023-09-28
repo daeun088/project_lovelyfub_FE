@@ -1,0 +1,188 @@
+.layout {
+    padding-top: 50px;
+    background-color: rgb(255, 255, 255);
+}
+
+.title {
+    color: var(--title, #101010);
+    font-family: 'LeferiPoint-BlackA';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 22px; /* 122.222% */
+    letter-spacing: -1.26px;
+    margin: 24px;
+    text-align: left;
+}
+
+.cafeContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cafeList {
+    padding-bottom: 30px;
+    width: 90%;
+    height:80%;
+    margin: 5%;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.06);
+}
+
+.productImage {
+    text-align: center;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    margin-bottom: 5px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.productTitle {
+    color: var(--title, #101010);
+    text-align: center;
+    font-family: 'LeferiPoint-BlackA';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -1.12px;
+    text-align: left;
+    margin: 8px;
+}
+
+.productText {
+    color: var(--main-txt, #737373);
+    font-family: 'SUIT-Regular';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.84px;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 15px;
+}
+
+.modalBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .modal {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 99999;
+    width: 314px;
+    height: 586px;
+    flex-shrink: 0;
+    border-radius: 24px;
+    background: #FFF;
+  }
+
+.closeButton {
+    position: absolute;
+    font-size: 30px;
+    cursor: pointer;
+    top : 5px;
+    left : 20px
+}
+
+.shareButton {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 15px;
+    right: 60px;
+    cursor: pointer;
+}
+
+.heart {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 15px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.modalImage {
+    text-align: center;
+    width: 100%;
+    height: 45%;
+    object-fit: cover;
+    margin-top: 50px;
+}
+
+.modalTitle {
+    color: var(--title, #101010);
+    text-align: left;
+    font-family: 'LeferiPoint-BlackA';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18.5px;
+    letter-spacing: -1.26px;
+    padding: 16px;
+    padding-left: 20px;
+    padding-bottom: 12.5px;
+}
+
+.location {
+    color: var(--main-txt, #737373);
+    text-align: left;
+    font-family: 'SUIT-Regular';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px; /* 154.167% */
+    letter-spacing: -0.84px;
+    margin-left: 45px;
+    padding-bottom: 3px;
+}
+
+.subIcon {
+    display: left;
+    position: absolute;
+    left : 20px;
+}
+
+.mapLayout {
+    width: 92%;
+    height: 120px;
+    margin: 4%;
+    padding: auto;
+    border-radius: 24px;
+    position: center;
+    border-color:rgb(255, 255, 255);
+}
+
+.instaLink {
+    color: var(--main-txt, #737373);
+    font-family: 'SUIT-Regular';
+    font-size: 12px;
+    font-style: normal;
+    text-align: left;
+    font-weight: 400;
+    letter-spacing: -0.84px;
+    padding-top: 4px;
+    padding-bottom: 5px;
+    margin-left: 50px;
+  
+    /* 링크 스타일 수정 */
+    a {
+      text-decoration: none;
+      color: inherit;
+      display: block; /* 인스타그램 링크를 블록 요소로 설정하여 옆으로 배치되지 않도록 함 */
+    }
+  }

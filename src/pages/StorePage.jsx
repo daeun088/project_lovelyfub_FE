@@ -1,15 +1,15 @@
 import React from 'react';
 import Layout from '../components/Layout/layout';
-import Main from '../components/Main2/main';
+import Store from '../components/Store/Store';
 
-function Mainpage2(){
+function Storepage(){
     return (
         <>
             <Layout>
-                <Main/>
+                <Store />
             </Layout>
         </>
     )
 }
 
-export default Mainpage2
+export default Storepage
