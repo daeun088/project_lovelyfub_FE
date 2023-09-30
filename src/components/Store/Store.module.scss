@@ -1,6 +1,25 @@
 .layout {
-    padding-top: 50px;
+    padding-top: 20px;
     background-color: rgb(255, 255, 255);
+}
+
+.filterBar{
+    display: flex;
+    width: 96%;
+    margin: 0px 2%;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    border-radius: 10px;
+    border: 1px solid var(--gray-scale, #D9D9D9);
+    background: var(--gray-scale, #F3F3F3);
+    color: var(--sub-title, #313131);
+    font-family: 'Pretendard-Regular';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .title {
@@ -13,6 +32,31 @@
     letter-spacing: -1.26px;
     margin: 24px;
     text-align: left;
+}
+
+.categoryBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white, #FFF);
+    font-family: 'Pretendard-Regular';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    ul{
+        list-style: none;
+        display: flex;
+        gap: 8px;
+        li{
+            padding: 8px 12px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 30px;
+            background: var(--orange2, #FF6F3C);
+        }
+        
+    }
 }
 
 .cafeContainer {
