@@ -10,6 +10,7 @@
     align-items: center;
     background: #FFF;
     box-shadow: 4px 4px 22px 0px rgba(0, 0, 0, 0.10);
+    z-index: 101;
 }
 
 .plusbutton {
@@ -20,6 +21,7 @@
     bottom: 37px;
     justify-content: center;
     align-items: center;
+    z-index: 102;
 }
 
 .plusbutton button {
@@ -32,6 +34,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 102;
 }
 
 
@@ -56,5 +59,6 @@
             }
         }
     }
+    z-index: 101;
 }
 

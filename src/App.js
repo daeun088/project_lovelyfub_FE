@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, } from 'react-router-dom';
 import './App.css';
 import { LoginProvider } from './components/Layout/Header/Login/LoginContext';
 import Header from './components/Layout/Header/Header';
+import Menu from './components/Layout/Menu/Menu';
 import Mainpage from './pages/Mainpage'
 import Marketpage from './pages/Marketpage'
 import Cafepage from './pages/Cafepage'
@@ -20,6 +21,7 @@ function App() {
         <UserDataProvider>
           <LoginProvider>
             <Header />
+            <Menu />
             <Routes>
               <Route path='/main' element={<Mainpage2/>} />
               <Route path='/main/2' element={<Mainpage/>} />
