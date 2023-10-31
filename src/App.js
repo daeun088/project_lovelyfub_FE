@@ -12,6 +12,7 @@ import Mainpage2 from './pages/Mainpage2'
 import Userpage from './pages/Userpage'
 import OAuthRedirect from './pages/OAuthRedirect';
 import Storepage from './pages/StorePage';
+import StoreDetailpage from './pages/StoreDetail';
 import { UserDataProvider } from './components/User/UserDataContext';
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
               <Route path='/map' element={<Mappage/>}/>
               <Route path='/user/mypage' element={<Userpage/>}/>
               <Route path='/store' element={<Storepage/>}/>
+              <Route path='/store/:storeId' element={<StoreDetailpage/>}/>
               <Route path='/oauth/redirect' element={<OAuthRedirect/>} >
               </Route>
             </Routes>

@@ -2,33 +2,56 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from "./Store.module.scss";
 //import CafeModal from "./CafeModal";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Store() {
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [data, setData] = useState([]);
   const [selectedStore, setSelectedStore] = useState(null);
+  const [page, setPage] = useState(1);
 
   const mapElement = useRef(null);
   const mapInstance = useRef(null);
 
 
-  useEffect(() => {
+  const loadMoreData = () => {
     axios
-      .get("https://lovelyfub.com/store?page=1&size=30")
+      .get(`https://lovelyfub.com/store?page=${page}&size=30`)
       .then((response) => {
-          const storeData = response.data.data.map((store) => {
-            return {
-              id: store.storeid,
-              name: store.name,
-              profile: store.profile,
-              description: store.introduction,
-              category: store.category,
-              usertype: store.usertype,
-            };
-          });
-          setData(storeData);
-        })
+        const storeData = response.data.data.map((store) => {
+          return {
+            id: store.storeid,
+            name: store.name,
+            profile: store.profile,
+            description: store.introduction,
+            category: store.category,
+            usertype: store.usertype,
+          };
+        });
+        setData((prevData) => [...prevData, ...storeData]);
+        setPage((prevPage) => prevPage + 1); // 다음 페이지 번호 설정
+      })
       .catch((error) => console.error("Error fetching data:", error));
+  };
+  
+  useEffect(() => {
+    loadMoreData();
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (
+        window.innerHeight + window.scrollY >= document.body.scrollHeight
+      ) {
+        loadMoreData();
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   useEffect(() => {
@@ -68,13 +91,7 @@ function Store() {
   }, []);
 
   const handleItemClick = (storeId) => {
-    axios
-      .get(`https://lovelyfub.com/store/${storeId}`)
-      .then((response) => {
-        setSelectedStore(response.data);
-        setIsModalOpen(true);
-      })
-      .catch((error) => console.error("Error fetching item:", error));
+    navigate(`/store/${storeId}`);
   };
 
   return (
@@ -86,17 +103,6 @@ function Store() {
         필터설정
       </div>
 
-      <div className={styles.title}>푸드리퍼브 재료로<br />음식을 만드는 식당이에요</div>
-      
-      <div className={styles.categoryBar}>
-        <ul>
-          <li>전체보기</li>
-          <li>채식</li>
-          <li>친환경</li>
-          <li>푸드리퍼브</li>
-        </ul>
-      </div>
-
       <div className={styles.cafeContainer}>
       {data.map((store) => (
         <div key={store.id} className={styles.cafeList} onClick={() => handleItemClick(store.id)}>
@@ -104,6 +110,7 @@ function Store() {
             alt="store" className={styles.productImage}/>
           <div className={styles.productTitle}>{store.name}</div>
           <div className={styles.productText}>{store.description}</div>
+          <div className={styles.productUsertype}>{store.usertype}</div>
           </div>
       ))}
       </div>
