@@ -1,0 +1,25 @@
+.modal{
+    display:flexbox;
+    position: relative;
+    z-index: 101;
+    width: 100%;
+    height: 70%;
+    bottom: 0;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: #FFF;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: calc(50% - 12px);
+    background: none;
+    display: flex;
+    justify-content: center;
+    border: none;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+  }

@@ -1,13 +1,35 @@
-import { NavLink, useLocation} from 'react-router-dom'
+import { NavLink, useLocation, useNavigate} from 'react-router-dom'
 import styles from './Menu.module.scss'
+import { useState } from 'react';
+import { useLoginContext } from '../Header/Login/LoginContext';
+import Modal from '../Header/Login/Modal';
 
 const Menu = () => {
     const location = useLocation();
+    const [modalState, setModalState] = useState(false);
+    const {isLoggedIn} = useLoginContext();
+    const navigate = useNavigate();
+
+    const openModal = () => {
+        setModalState(true);
+    };
+
+    const closeModal = () => {
+        setModalState(false);
+    }
+
+    const handleMyPageClick = (e) => {
+        e.preventDefault(); // 기본 이동 막기
+    
+        if (!isLoggedIn) {
+            openModal(); // 모달 열기
+        } else {
+            navigate('/user/mypage'); // 로그인 상태라면 mypage로 이동
+        }
+    }
 
     return (
         <header>
-            
-
             <div className={styles.menubar}>
                 <nav className={styles.navigation}>
                     <ul>
@@ -34,8 +56,8 @@ const Menu = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/market">
-                                {location.pathname === '/market' ? 
+                            <NavLink to="/map">
+                                {location.pathname === '/map' ? 
                                 (<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
                                     <path d="M18.6568 16.8819L17.4698 18.0558C16.5949 18.9144 15.4598 20.0184 14.0639 21.3679C13.1917 22.2113 11.8079 22.2112 10.9358 21.3677L7.44466 17.9718C7.0059 17.541 6.63863 17.1777 6.34279 16.8819C2.94238 13.4815 2.94238 7.9683 6.34279 4.56789C9.7432 1.16748 15.2564 1.16748 18.6568 4.56789C22.0572 7.9683 22.0572 13.4815 18.6568 16.8819ZM15 10.9996C15 9.61875 13.8806 8.49936 12.4998 8.49936C11.119 8.49936 9.99958 9.61875 9.99958 10.9996C9.99958 12.3804 11.119 13.4998 12.4998 13.4998C13.8806 13.4998 15 12.3804 15 10.9996Z" fill="#FF6F3C"/>
                                 </svg>):
@@ -45,14 +67,33 @@ const Menu = () => {
                             </NavLink>
                         </li>
                         <li>
-                            <NavLink to="/map">
-                                {location.pathname === '/map' ? 
-                                (<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                            <NavLink to="/user/mypage" onClick={handleMyPageClick}>
+                                {location.pathname === '/user/mypage' ? 
+                                (<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none" >
                                     <path d="M18.2545 14.0002C19.4966 14.0002 20.5034 15.007 20.5034 16.2491V17.1675C20.5034 17.7409 20.3242 18.2999 19.9908 18.7664C18.4449 20.9296 15.9206 22.0013 12.5004 22.0013C9.0794 22.0013 6.55643 20.9292 5.01427 18.7648C4.68231 18.2989 4.50391 17.7411 4.50391 17.169V16.2491C4.50391 15.007 5.51076 14.0002 6.75278 14.0002H18.2545ZM12.5004 2.00488C15.2618 2.00488 17.5004 4.24346 17.5004 7.00488C17.5004 9.76631 15.2618 12.0049 12.5004 12.0049C9.73894 12.0049 7.50036 9.76631 7.50036 7.00488C7.50036 4.24346 9.73894 2.00488 12.5004 2.00488Z" fill="#FF6F3C"/>
                                 </svg>) :
-                                (<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+                                (<svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none" >
                                     <path d="M18.2545 14.0002C19.4966 14.0002 20.5034 15.007 20.5034 16.2491V16.8245C20.5034 17.7188 20.1838 18.5836 19.6023 19.263C18.0329 21.0965 15.6457 22.0013 12.5004 22.0013C9.3545 22.0013 6.96849 21.0962 5.40219 19.2619C4.82242 18.583 4.50391 17.7195 4.50391 16.8267V16.2491C4.50391 15.007 5.51076 14.0002 6.75278 14.0002H18.2545ZM18.2545 15.5002H6.75278C6.33919 15.5002 6.00391 15.8355 6.00391 16.2491V16.8267C6.00391 17.3624 6.19502 17.8805 6.54287 18.2878C7.79618 19.7555 9.76206 20.5013 12.5004 20.5013C15.2387 20.5013 17.2063 19.7555 18.4627 18.2876C18.8117 17.8799 19.0034 17.361 19.0034 16.8245V16.2491C19.0034 15.8355 18.6681 15.5002 18.2545 15.5002ZM12.5004 2.00488C15.2618 2.00488 17.5004 4.24346 17.5004 7.00488C17.5004 9.76631 15.2618 12.0049 12.5004 12.0049C9.73894 12.0049 7.50036 9.76631 7.50036 7.00488C7.50036 4.24346 9.73894 2.00488 12.5004 2.00488ZM12.5004 3.50488C10.5674 3.50488 9.00036 5.07189 9.00036 7.00488C9.00036 8.93788 10.5674 10.5049 12.5004 10.5049C14.4334 10.5049 16.0004 8.93788 16.0004 7.00488C16.0004 5.07189 14.4334 3.50488 12.5004 3.50488Z" fill="#313131"/>
                                 </svg>)}
+
+                                {modalState && !isLoggedIn && (
+                                    <div
+                                        style={{
+                                        display: "flex",
+                                        position: "fixed",
+                                        top: "0",
+                                        left: "0",
+                                        bottom: "0",
+                                        right: "0",
+                                        justifyContent: "center",
+                                        alignItems: "center",
+                                        zIndex: "100",
+                                        backgroundColor: "rgba(0,0,0,0.5)",
+                                        }}
+                                    >
+                                        <Modal setModalState={setModalState} onLoginSuccess={closeModal} />
+                                    </div>
+                                    )}
                             </NavLink>
                         </li>
                     </ul>

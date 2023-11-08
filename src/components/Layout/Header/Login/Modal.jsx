@@ -22,8 +22,6 @@ const Modal = forwardRef((props, ref) => {
         window.location.href = `https://lovelyfub.com/oauth2/authorize/naver?redirect_uri=${redirectUri}`;
         props.onLoginSuccess();
       };
-      
-    
 
     return (
         <div ref={wrapperRef}>
