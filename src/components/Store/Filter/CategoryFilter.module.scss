@@ -2,7 +2,6 @@
     display: inline-flex;
     width: 367px;
     height: 37px;
-    padding-right: 0px;
     justify-content: center;
     align-items: flex-start;
     gap: 12px;
@@ -13,7 +12,7 @@
         justify-content: center;
         align-items: center;
         gap: 8px;
-        border: 1px solid var(--gray-scale, #F3F3F3);
+        border: 1px solid var(--gray-scale, #9F9F9F);
         border-radius: 30px;
         color: var(--gray-scale, var(--email, #9F9F9F));
         font-family: 'Pretendard-Regular';
@@ -24,6 +23,7 @@
         &.active {
           background: var(--orange2, #FF6F3C);
           color: #fff;
+          border: 1px solid var(--gray-scale, #FFF);
         }
     }
 }

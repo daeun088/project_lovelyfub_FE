@@ -1,6 +1,18 @@
 import React, { useState } from "react";
 import styles from "./RegionFilter.module.scss";
 
+const CityListView = ({ cities }) => {
+  return (
+    <div className={styles.cityList}>
+      <ul>
+        {cities.map((city) => (
+          <li key={city}>{city}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
 const RegionView = ({ regions }) => {
   const [selectedRegion, setSelectedRegion] = useState(regions[0]?.name || "");
 
@@ -10,38 +22,28 @@ const RegionView = ({ regions }) => {
 
   return (
     <div>
-      <table className={styles.table}>
-        <thead>
-          <tr>
-            <th>시.도</th>
-            <th>시.군.구</th>
-          </tr>
-        </thead>
-        <tbody>
+      <div className={styles.regionTable}>
+        <ul className={styles.header}>
+          <li>시・도</li>
+          <li>시・군・구</li>
+        </ul>
+        <div className={styles.firstColumn}>
           {regions && regions.length > 0 ? (
             regions.map((region) => (
-              <tr key={region.name}>
-                <td onClick={() => handleSelectRegion(region.name)} className={styles.firstColumn}>
-                  {region.name}
-                </td>
-                <td colSpan="2" className={styles.cityCell}>
-                  {selectedRegion === region.name && (
-                    <ul>
-                      {region.cities.map((city) => (
-                        <li key={city}>{city}</li>
-                      ))}
-                    </ul>
-                  )}
-                </td>
-              </tr>
+              <div key={region.name} onClick={() => handleSelectRegion(region.name)}>
+                {region.name}
+              </div>
             ))
           ) : (
-            <tr>
-              <td colSpan="2">No regions available</td>
-            </tr>
+            <div>No regions available</div>
           )}
-        </tbody>
-      </table>
+        </div>
+        <div className={styles.secondColumn}>
+          {selectedRegion && (
+            <CityListView cities={regions.find((r) => r.name === selectedRegion)?.cities || []} />
+          )}
+        </div>
+      </div>
       {selectedRegion && (
         <div>
           <p>선택된 시.도: {selectedRegion}</p>

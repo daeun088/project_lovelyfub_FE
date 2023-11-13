@@ -28,10 +28,14 @@
 
 .typeBar{
     margin-top: 60px;
-    display:flex;
+    display:inline-flex;
     justify-content: center;
     list-style: none;
     gap: 41px;
+    height: 37px;
+    flex-shrink: 0;
+    width: 340px;
+
     li {
         display: flex;
         padding: 8px 14px;

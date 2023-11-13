@@ -24,6 +24,13 @@
     }
   }
 
+.header {
+    border: 1px solid var(--gray-scale, #F3F3F3);
+    ul{
+        list-style: none;
+    }
+}
+
 .firstColumn {
     border: 1px solid var(--gray-scale, #F3F3F3);
     padding: 10px;
