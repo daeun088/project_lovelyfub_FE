@@ -1,0 +1,48 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--gray-scale-1, var(--sub-title, #313131));
+    margin-top: 20px; // 원하는 간격 설정
+    font-family: 'Pretendard-Regular';
+  
+    th, td {
+      border: 1px solid var(--gray-scale, #F3F3F3);
+      padding: 10px;
+      text-align: center;
+    }
+  
+    th:first-child,
+    td:first-child {
+        background: #FFF;
+        width: 25%; // 첫 번째 열 너비 (2:8 비율 중 2 부분)
+    }
+
+    th:not(:first-child),
+    td:not(:first-child) {
+        background: var(--table-cell-bg, #FFF); // 셀 배경색 설정, 기본값은 흰색
+        width: 75%; // 나머지 열 너비 (2:8 비율 중 8 부분)
+    }
+  }
+
+.firstColumn {
+    border: 1px solid var(--gray-scale, #F3F3F3);
+    padding: 10px;
+    text-align: center;
+    height: 24px; // 고정된 높이
+  }
+  
+  .cityCell {
+    border: 1px solid var(--gray-scale, #F3F3F3);
+    padding: 10px;
+    text-align: center;
+    height: 24px; // 고정된 높이
+  }
+  
+  th {
+    background: #FFF;
+  }
+  
+  td {
+    background: var(--table-cell-bg, #FFF);
+  }
+  

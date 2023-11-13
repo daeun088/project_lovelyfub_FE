@@ -1,0 +1,31 @@
+.typeBar{
+    display: inline-flex;
+    width: 100%;
+    height: 40px;
+    padding-right: 0px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 12px;
+    flex-shrink: 0;
+    list-style: none;
+    li {
+        padding: 8px 14px;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        gap: 8px;
+        border: 1px solid var(--gray-scale, #9F9F9F);
+        border-radius: 30px;
+        color: var(--gray-scale, var(--email, #9F9F9F));
+        font-family: 'Pretendard-Regular';
+        font-size: 16px;
+        font-weight: 500;
+    
+        // 활성화된 타입에 대한 스타일
+        &.active {
+          background: var(--orange2, #FF6F3C);
+          color: #fff;
+          border: 1px solid var(--gray-scale, #F3F3F3);
+        }
+    }
+}

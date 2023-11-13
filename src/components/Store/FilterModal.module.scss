@@ -1,5 +1,5 @@
+
 .modal{
-    display:flexbox;
     position: relative;
     z-index: 101;
     width: 100%;
@@ -8,12 +8,13 @@
     flex-shrink: 0;
     border-radius: 16px;
     background: #FFF;
+    align-items: center;
 }
 
 .closeButton {
     position: absolute;
     top: 10px;
-    right: calc(50% - 12px);
+    right: calc(50% - 20px);
     background: none;
     display: flex;
     justify-content: center;
@@ -22,4 +23,29 @@
     cursor: pointer;
     font-size: 16px;
     color: #333;
+    margin-bottom: 20px;
   }
+
+.typeBar{
+    margin-top: 60px;
+    display:flex;
+    justify-content: center;
+    list-style: none;
+    gap: 41px;
+    li {
+        display: flex;
+        padding: 8px 14px;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid var(--gray-scale, #F3F3F3);
+        border-radius: 30px;
+        color: var(--gray-scale, var(--email, #9F9F9F));
+        font-family: 'Pretendard-Regular';
+        font-size: 16px;
+        font-weight: 500;
+        &.active {
+          background: var(--orange2, #FF6F3C);
+          color: #fff;
+        }
+    }
+}
