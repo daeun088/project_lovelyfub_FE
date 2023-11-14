@@ -14,7 +14,7 @@
   
   .modal {
     width: 100%;
-    height: 400px;
+    height: 70%;
     flex-shrink: 0;
     border-radius: 16px 16px 0px 0px;
     background: var(--white, #FFF);
@@ -22,13 +22,11 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center; 
   }
   
   .closeButton {
     position: absolute;
-    top: 10px;
+    top: 20px;
     right: calc(50% - 12px);
     background: none;
     display: flex;
@@ -39,4 +37,75 @@
     font-size: 16px;
     color: #333;
   }
-  
+
+.comment {
+  display: inline-flex;
+  align-items: start;
+  gap: 8px;
+  margin-top: 90px;
+  width: 100%;
+}
+
+.profile {
+  width: 30px;
+  height: 30px;
+  fill: var(--icon, #D9D9D9);
+  border-radius: 50%;
+  margin-left: 28px;
+}
+
+.container {
+  width: 90%;
+  text-align: start;
+}
+
+.nickname{
+  color: var(--gray-scale-1, var(--sub-title, #313131));
+  font-family: 'Pretendard-Regular';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.ment {
+  color: var(--gray-scale-1, var(--sub-title, #313131));
+  font-family: 'Pretendard-Regular';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  width: 100%;
+}
+
+.date{
+  margin-top: 3px;
+  color: var(--gray-scale, var(--email, #9F9F9F));
+  font-family: 'Pretendard-Regular';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.addComment {
+  align-items: end;
+  margin-top: 18px;
+  input {
+    width: 90%;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid var(--gray-scale, #D9D9D9);
+    background: var(--white, #FFF);
+    align-items: end;
+    resize: none;
+    font-family: 'Pretendard-Regular';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
