@@ -1,55 +1,97 @@
-.table {
-    width: 100%;
-    border-collapse: collapse;
-    color: var(--gray-scale-1, var(--sub-title, #313131));
-    margin-top: 20px; // 원하는 간격 설정
-    font-family: 'Pretendard-Regular';
-  
-    th, td {
-      border: 1px solid var(--gray-scale, #F3F3F3);
-      padding: 10px;
-      text-align: center;
-    }
-  
-    th:first-child,
-    td:first-child {
-        background: #FFF;
-        width: 25%; // 첫 번째 열 너비 (2:8 비율 중 2 부분)
-    }
-
-    th:not(:first-child),
-    td:not(:first-child) {
-        background: var(--table-cell-bg, #FFF); // 셀 배경색 설정, 기본값은 흰색
-        width: 75%; // 나머지 열 너비 (2:8 비율 중 8 부분)
-    }
-  }
-
 .header {
-    border: 1px solid var(--gray-scale, #F3F3F3);
-    ul{
-        list-style: none;
-    }
+    display: inline-flex;
+    width: 100%;
+    align-items: start;
+    flex-shrink: 0;
+    list-style: none;
+    //padding-right: 50px;
+    color: var(--gray-scale-1, var(--sub-title, #313131));
+    font-family: 'Pretendard-Regular';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
 }
 
 .firstColumn {
     border: 1px solid var(--gray-scale, #F3F3F3);
-    padding: 10px;
     text-align: center;
-    height: 24px; // 고정된 높이
+    height: 24px;
+    padding: 8px 24px;
+    justify-content: center;
+    align-items: start;
+    gap: 8px;
+    width: 10%;
+    color: var(--gray-scale-1, var(--sub-title, #313131));
+    font-family: 'Pretendard-Regular';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
   }
-  
-  .cityCell {
+
+  .secondColumn{
     border: 1px solid var(--gray-scale, #F3F3F3);
-    padding: 10px;
     text-align: center;
-    height: 24px; // 고정된 높이
+    height: 24px;
+    padding: 8px 24px;
+    padding-right: 5%;
+    justify-content: center;
+    align-items: start;
+    gap: 8px;
+    width: 70%;
+    color: var(--gray-scale-1, var(--sub-title, #313131));
+    font-family: 'Pretendard-Regular';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
   }
-  
-  th {
-    background: #FFF;
-  }
-  
-  td {
-    background: var(--table-cell-bg, #FFF);
-  }
-  
+
+.regionColumn {
+    border: 1px solid var(--gray-scale, #F3F3F3);
+    text-align: center;
+    height: 24px;
+    padding: 8px 24px;
+    justify-content: center;
+    align-items: start;
+    gap: 8px;
+    width: 60%;
+    color: var(--gray-scale-1, var(--sub-title, #313131));
+    font-family: 'Pretendard-Regular';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.container {
+    display: inline-flex;
+    width: 100%;
+    align-items: start;
+    flex-shrink: 0;
+    list-style: none;
+    color: var(--gray-scale-1, var(--sub-title, #313131));
+    font-family: 'Pretendard-Regular';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.cityList {
+    list-style: none;
+    text-align: start;
+    height: 24px;
+    padding: 8px 24px;
+    justify-content: center;
+    align-items: start;
+    gap: 8px;
+    flex: 3;
+    color: var(--gray-scale-1, var(--sub-title, #313131));
+    font-family: 'Pretendard-Regular';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

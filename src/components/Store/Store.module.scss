@@ -47,7 +47,16 @@
     margin-bottom: 5px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    background-color: #E1E1E1;
 }
+
+.productImage img {
+    position: absolute; /* 이미지를 상대적으로 위치시킬 수 있도록 설정 */
+    top: 40%; /* 부모 요소의 중간을 기준으로 세로 정렬 */
+    left: 50%; /* 부모 요소의 중간을 기준으로 가로 정렬 */
+    transform: translate(-50%, -50%); /* 이미지의 중심을 기준으로 가운데 정렬 */
+
+  }
 
 .productTitle {
     color: var(--title, #101010);

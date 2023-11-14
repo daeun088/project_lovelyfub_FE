@@ -45,7 +45,10 @@ function FilterModal({ isOpen, onClose, onFilterSelect }) {
       
       <div className={styles.modalContent}>
         {renderView()} 
-        <button onClick={handleApplyFilter}>적용</button>
+        <div className={styles.choiceBlock}>
+          <div>최대 3개까지 선택가능해요</div>
+        </div>
+        <button onClick={handleApplyFilter} className={styles.choiceButton}>확인</button>
       </div>
     </div>
   );

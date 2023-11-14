@@ -133,8 +133,11 @@ function Store() {
       <div className={styles.cafeContainer}>
       {data.map((store) => (
         <div key={store.id} className={styles.cafeList} onClick={() => handleItemClick(store.id)}>
-          <img src={`/푸드리퍼브 가게 프로필/${store.profile}`}
-            alt="store" className={styles.productImage}/>
+          {/*<img src={`/푸드리퍼브 가게 프로필/${store.profile}`}
+            alt="store" className={styles.productImage}/>*/}
+            <div className={styles.productImage}>
+              <img src={`/subImage.png`} alt="store"/>
+            </div>
           <div className={styles.productTitle}>{store.name}</div>
           <div className={styles.productText}>{store.description}</div>
           <div className={styles.productUsertype}>{store.usertype}</div>

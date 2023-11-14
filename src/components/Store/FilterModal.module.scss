@@ -9,6 +9,7 @@
     border-radius: 16px;
     background: #FFF;
     align-items: center;
+    overflow-y: auto;
 }
 
 .closeButton {
@@ -35,7 +36,6 @@
     height: 37px;
     flex-shrink: 0;
     width: 340px;
-
     li {
         display: flex;
         padding: 8px 14px;
@@ -52,4 +52,32 @@
           color: #fff;
         }
     }
+    padding-right: 25px;
+}
+
+.modalContent {
+  margin-bottom: 20%;
+}
+
+.choiceBlock{
+  margin-top: 50px;
+  border: 1px solid var(--gray-scale, #5a0b0b);
+}
+
+.choiceButton button {
+  display: flex;
+  width: 340px;
+  height: 58px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 10px;
+  background: var(--orange2, #FF6F3C);
+  color: var(--white, #FFF);
+  font-family: 'Pretendard-Regular';
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  outline: none;
 }
