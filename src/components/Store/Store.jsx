@@ -48,7 +48,7 @@ function Store() {
   
   useEffect(() => {
     loadMoreData();
-  }, []);
+  }, [loadMoreData]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,7 +63,7 @@ function Store() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [loadMoreData]);
 
   useEffect(() => {
     const { naver } = window;

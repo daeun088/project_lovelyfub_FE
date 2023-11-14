@@ -17,3 +17,18 @@
     background: var(--white, #FFF);
     box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.08);
   }
+
+.changeButton {
+    position: absolute;
+    top:75px; /* 버튼을 원하는 위치로 조절하세요 */
+    left: 15px; /* 버튼을 원하는 위치로 조절하세요 */
+    z-index: 1; /* 다른 요소 위에 보이도록 설정 */
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 30px;
+    background: var(--white, #FFF);
+    box-shadow: 0px 4px 14px 0px rgba(0, 0, 0, 0.08);
+}
