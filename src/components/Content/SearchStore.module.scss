@@ -1,0 +1,52 @@
+.layout {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.searchInput {
+    margin-top: 25px;
+    border-radius: 10px;
+    border: 1px solid var(--gray-scale, #D9D9D9);
+    background: var(--white, #FFF);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding-left : 5px;
+    input {
+        border: none;
+        width: 340px;
+        height: 40px;
+        flex-shrink: 0;
+    }
+}
+
+.storeListConteiner {
+    gap:16px;
+    margin-top: 14px;
+
+}
+
+.storeBlock {
+    display: flex;
+    width: 340px;
+    padding: 4px 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+    border-radius: 10px;
+    border: 1px solid var(--orange2, #FF6F3C);
+}
+
+.storeName{
+    color: var(--orange2, var(--orange, #FF6F3C));
+text-align: center;
+font-family: 'Pretendard-Regular';
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}

@@ -14,6 +14,7 @@ import OAuthRedirect from './pages/OAuthRedirect';
 import Storepage from './pages/StorePage';
 import StoreDetailpage from './pages/StoreDetail';
 import Contentpage from './pages/Contentpage';
+import SearchStorepage from './pages/Searchpage';
 import { UserDataProvider } from './components/User/UserDataContext';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
             <Routes>
               <Route path='/main' element={<Mainpage2/>} />
               <Route path='/content' element={<Contentpage/>}/>
+              <Route path='/content/search' element={<SearchStorepage/>}/>
               <Route path='/main/2' element={<Mainpage/>} />
               <Route path='/market' element={<Marketpage/>}/>
               <Route path='/cafe' element={<Cafepage/>}/>
