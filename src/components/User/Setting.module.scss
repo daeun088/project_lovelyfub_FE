@@ -1,0 +1,89 @@
+.layout {
+    background: #FFF;
+}
+
+.pictureContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 70px;
+    padding-bottom: 24px;
+}
+
+.picture {
+    width: 80px;
+    height: 80px;
+    fill: #FCFCFC;
+    border-radius: 50%;
+}
+
+.picSetting {
+    color: var(--gray-scale2, var(--main-txt, #737373));
+    text-align: center;
+    font-family: 'Pretendard-Regular';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-top: 10px;
+}
+
+.userInfo {
+    height: 62px;
+    align-items: center;
+    gap: 10px;
+}
+
+.infoBlock {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nickname {
+    color: var(--gray-scale-1, var(--sub-title, #313131));
+    text-align: center;
+    font-family: 'Pretendard-Regular';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 50px;
+}
+
+input {
+    width: 250px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid var(--gray-scale, #D9D9D9);
+    background: var(--white, #FFF);
+    resize: none;
+    font-family: 'Pretendard-Regular';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .button {
+    display: inline-flex;
+    width: 340px;
+    height: 58px;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #FF6F3C;
+    margin-block: 150px;
+    border : none;
+    color: #FFF;
+    text-align: center;
+    font-family: 'SUIT-Regular';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18.5px; /* 115.625% */
+    letter-spacing: -1.12px;
+}

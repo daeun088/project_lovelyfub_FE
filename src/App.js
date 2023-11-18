@@ -15,6 +15,7 @@ import Storepage from './pages/StorePage';
 import StoreDetailpage from './pages/StoreDetail';
 import Contentpage from './pages/Contentpage';
 import SearchStorepage from './pages/Searchpage';
+import ProfileSettingpage from './pages/ProfileSettingpage';
 import { UserDataProvider } from './components/User/UserDataContext';
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
               <Route path='/cafe' element={<Cafepage/>}/>
               <Route path='/map' element={<Mappage/>}/>
               <Route path='/user/mypage' element={<Userpage/>}/>
+              <Route path='/user/setting' element={<ProfileSettingpage/>}/>
               <Route path='/store' element={<Storepage/>}/>
               <Route path='/store/:storeId' element={<StoreDetailpage/>}/>
               <Route path='/oauth/redirect' element={<OAuthRedirect/>} >

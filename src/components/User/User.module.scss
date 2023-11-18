@@ -1,6 +1,6 @@
 .layout {
     background: #F3F3F3;
-
+    padding-bottom: 30px;
 }
 
 .profile {
@@ -162,6 +162,28 @@
     height: 100px;
     flex-shrink: 0;
     padding-bottom: 30px;
+}
+
+.errorButton{
+    margin-top: 10px;
+    display: flex;
+    width: 96%;
+    margin-inline: 2%;
+    height: 58px;
+    padding: 7px 0px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: var(--white, #FFF);
+    color: var(--gray-scale-1, var(--sub-title, #313131));
+    text-align: center;
+    font-family: 'Pretendard-Regular';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
 }
 
 .notWishText {

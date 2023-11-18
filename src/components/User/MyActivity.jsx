@@ -5,7 +5,6 @@ import CafeModal from "../Cafe/CafeModal";
 import { useNavigate } from "react-router-dom";
 
 const MyActivity= ()=> {
-
     const navigate = useNavigate();
     const [likeStores, setLikeStores] = useState([]);
     const [selectedCafe, setSelectedCafe] = useState(null);
@@ -16,7 +15,7 @@ const MyActivity= ()=> {
       }
 
     function handleClick() {
-        navigate('/map');
+        navigate('/content');
     }
 
     return (
@@ -34,9 +33,12 @@ const MyActivity= ()=> {
                     ))}
                   </div>
                 ) : (
+                    /*
                 <div className={styles.notWishContainer}>
                     <div className={styles.notWishText}>아직 나의 활동이 없어요<br /><span className={styles.notWishText2}>리뷰를 적어볼까요?</span></div>
                     <button onClick={handleClick} className={styles.button}>리뷰 적기</button>
+                </div>*/
+                <div>hi
                 </div>
                 )}
             </div>
