@@ -1,18 +1,16 @@
 .layout {
-    padding-top: 90px;
-    background: #ECECEC;
+    background: #F3F3F3;
 
 }
 
 .profile {
+    padding-top: 15px;
     display: flex;
-    height: 150px;
     align-items: center;
-    gap: 14px;
     flex-shrink: 0;
-    padding-left: 30px;
+    background-color: #FFF;
   }
-  
+
   .profilepic {
     width: 80px;
     height: 80px;
@@ -20,13 +18,14 @@
     border-radius: 50%;
   }
   
-  .userInfo {
+.userInfo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    margin: 24px;
   }
-  
+
   .nickname {
     color: var(--sub-title, #313131);
     font-family: 'SUIT-Regular';
@@ -38,58 +37,124 @@
     margin-bottom: 15px;
   }
   
-  .email {
-    color: var(--email, #9F9F9F);
-    font-family: 'SUIT-Regular';
+  .instaId{
+    color: var(--gray-scale, var(--email, #9F9F9F));
+    text-align: center;
+    font-family: 'Pretendard-Regular';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+.setting {
+    line-height: normal;
+    position: absolute;
+    right: 20px;
+}
+
+.lovelyScoreConteiner {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 25px;
+    background-color: #FFF;
+}
+
+.scoreConteiner {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.scoreTitle {
+    color: var(--gray-scale2, var(--main-txt, #737373));
+    text-align: center;
+    font-family: 'Pretendard-Regular';
+    margin-left: 24px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.lovelyScore {
+    color: var(--orange2, var(--orange, #FF6F3C));
+    text-align: center;
+    font-family: 'Pretendard-Regular';
     font-size: 18px;
     font-style: normal;
-    font-weight: 500;
-    line-height: 18.5px;
-    letter-spacing: -1.12px;
-  }  
+    font-weight: 600;
+    line-height: normal;
+    position: absolute;
+    right: 27px;
+}
 
-.wish {
+.scoreBar {
+    width: 268px;
+    height: 10px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: var(--gray-scale, #F3F3F3);
+    margin-left: 24px;
+}
+
+.bottomView {
+    margin-top: 15px;
     align-items: center;
     width: 100%;
-    height: initial;
-    flex-shrink: 0;
     border-radius: 16px;
     background: #FFF;
     box-shadow: 17px 8px 18px 7px rgba(0, 0, 0, 0.04);
-    flex-direction: row;
-    padding-top: 40px;
+    padding-top: 30px;
+    justify-content: center;
 }
 
-.wishTitleContainer {
-    display: flex;
-    flex-direction: row;
-    padding-bottom: 50px;
+.titleContainer {
+    align-items: center;
+    margin-bottom: 50px;
+    border-radius: 32px;
+    width: 100%;
+    height: 30px;
+    justify-content: center;
 }
 
-.wishTitle {
-    color: var(--sub-title, #313131);
-    text-align: center;
-    font-family: 'LeferiPoint-BlackA';
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 20px;
-    letter-spacing: -1.26px;
-    margin-left: 10px;
-    margin-top: 13px;
-}
-
-.heartImage {
-    width: 35px;
-    height: 35px;
-    margin-left: 24px;
+.titleBar {
+    display:inline-flex;
+    justify-content: center;
+    list-style: none;
+    padding: 7px 12px;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    width: auto;
+    height: 37px;
+    border-radius: 32px;
+    border: 1px solid #E1E1E1;
+    li {
+        display: flex;
+        width: auto;
+        color: var(--gray-scale, var(--email, #9F9F9F));
+        font-family: 'Pretendard-Regular';
+        font-size: 16px;
+        font-weight: 500;
+        height: 33px;
+        padding: 7px 20px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+        &.active {
+            border-radius: 32px;
+            background: #EEE;
+        }
+    }
+    padding-right: 25px;
 }
 
 .notWishContainer {
     //display: flex;
     justify-content: center;
     margin-top: 20px;
-    padding-bottom: 300px;
+    padding-block: 150px;
 }
 
 .notWishImage {
