@@ -1,0 +1,239 @@
+.layout {
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+
+}
+
+.pictureLayout {
+    width: 100%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+}
+
+.productImage {
+    text-align: center;
+    width: 340px;
+    height: 340px;
+    object-fit: cover;
+    margin-bottom: 5px;
+    background-color: #E1E1E1;
+    align-items: center; /* 세로 중앙 정렬을 위해 추가 */
+    justify-content: center;
+    img {
+        position: absolute; /* 이미지를 상대적으로 위치시킬 수 있도록 설정 */
+        top: 30%; /* 부모 요소의 중간을 기준으로 세로 정렬 */
+        left: 50%; /* 부모 요소의 중간을 기준으로 가로 정렬 */
+        transform: translate(-50%, -50%); /* 이미지의 중심을 기준으로 가운데 정렬 */
+      }
+}
+
+.storeLayout {
+    width:360px;
+    justify-content: center;
+    align-items: center;
+}
+
+.storeTitleContainer {
+    display: flex;
+    margin-block: 15px;
+    margin-inline: 20px;
+}
+
+.storeName {
+    width: 100%;
+    color: #000;
+    font-family: 'Pretendard-Regular';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: left;
+}
+
+.titleIcon {
+    margin-left : 6px;
+}
+
+.location {
+    color: var(--main-txt, #737373);
+    text-align: left;
+    font-family: 'Pretendard-Regular';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px; /* 154.167% */
+    letter-spacing: -0.84px;
+    margin-left: 3px;
+    padding-bottom: 3px;
+}
+
+.storeInfoContainer {
+    display: flex;
+    gap: 6px;
+}
+
+.subIcon {
+    display: left;
+    margin-left : 23px;
+}
+
+.instaLink {
+    color: var(--main-txt, #737373);
+    font-family: 'Pretendard-Regular';
+    font-size: 12px;
+    font-style: normal;
+    text-align: left;
+    font-weight: 400;
+    letter-spacing: -0.84px;
+    padding-top: 4px;
+    padding-bottom: 5px;
+  
+    /* 링크 스타일 수정 */
+    a {
+      text-decoration: none;
+      color: inherit;
+      display: block; /* 인스타그램 링크를 블록 요소로 설정하여 옆으로 배치되지 않도록 함 */
+    }
+  }
+
+  .mapLayout {
+    width: 92%;
+    height: 120px;
+    margin: 4%;
+    padding: auto;
+    border-radius: 24px;
+    position: center;
+    border-color:rgb(255, 255, 255);
+}
+
+.reviewButton {
+    display: flex;
+    width: 340px;
+    height: 58px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--gray-scale, #F3F3F3);
+    margin-inline: 10px;
+    color: var(--gray-scale-1, var(--sub-title, #313131));
+    font-family: 'Pretendard-Regular';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.line {
+    background: #D9D9D9;
+    width: 360px;
+    height: 1px;
+}
+
+.reviewTitle {
+    color: var(--gray-scale-1, var(--sub-title, #313131));
+    text-align: center;
+    font-family: 'Pretendard-Regular';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: left;
+    margin-inline: 24px;
+    margin-top: 24px;
+}
+
+.gridContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+    margin-inline: 20px;
+  }
+  
+  .gridItem {
+    width: 97px;
+    height: 97px;
+    border-radius: 10px;
+    background: var(--icon, #D9D9D9);
+    gap: 10px;
+  }
+  
+  .gridItem img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+.reviewBlock {
+    display: flex;
+    width: 340px;
+    height: auto;
+    padding: 12px 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid var(--gray-scale, #D9D9D9);
+    background: #FFF;
+    margin-block : 12px;
+}
+
+.reviewScore {
+    display: flex;
+    color: var(--gray-scale-1, var(--sub-title, #313131));
+    font-family: 'Pretendard-Regular';
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.reviewDate {
+    text-align: right;
+    
+}
+
+.reviewText {
+    color: var(--gray-scale-1, var(--sub-title, #313131));
+    font-family: 'Pretendard-Regular';
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.reviewMore {
+    color: var(--gray-scale2, var(--main-txt, #737373));
+    font-family: 'Pretendard-Regular';
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-decoration-line: underline;
+}
+
+.reviewImage {
+    width: 53px;
+    height: 53px;
+    border-radius: 10px;
+background: var(--icon, #D9D9D9);
+}
+
+.moreButton {
+    color: var(--gray-scale2, var(--main-txt, #737373));
+    font-family: 'Pretendard-Regular';
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
