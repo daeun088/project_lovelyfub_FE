@@ -1,12 +1,18 @@
 import React, { useState } from "react";
 import styles from "./RegionFilter.module.scss";
 
-const CityListView = ({ cities }) => {
+const CityListView = ({ cities, selectedCities, onSelectCity }) => {
   return (
-    <div>
+    <div className={styles.cityList}>
       <ul >
         {cities.map((city) => (
-          <li key={city}>{city}</li>
+          <li
+          key={city}
+          onClick={() => onSelectCity(city)}
+          className={selectedCities.includes(city) ? styles.active : ""}
+        >
+          {city}
+        </li>
         ))}
       </ul>
     </div>
@@ -15,14 +21,26 @@ const CityListView = ({ cities }) => {
 
 const RegionView = ({ regions }) => {
   const [selectedRegion, setSelectedRegion] = useState(regions[0]?.name || "");
+  const [selectedCities, setSelectedCities] = useState([]);
 
   const handleSelectRegion = (region) => {
     setSelectedRegion(region);
   };
 
+  const handleSelectCity = (city) => {
+    // 최대 3개까지 선택 가능
+    if (selectedCities.length < 3) {
+      setSelectedCities((prevCities) => [...prevCities, city]);
+    }
+  };
+
+  const handleDeselectCity = (city) => {
+    setSelectedCities((prevCities) => prevCities.filter((selectedCity) => selectedCity !== city));
+  };
+
   return (
     <div>
-      <div>
+      <div className={styles.table}>
         <div className={styles.header}>
           <div className={styles.firstColumn}>시・도</div>
           <div className={styles.secondColumn}>시・군・구</div>
@@ -32,7 +50,10 @@ const RegionView = ({ regions }) => {
           <div> 
             {regions && regions.length > 0 ? (
               regions.map((region) => (
-                <div key={region.name} onClick={() => handleSelectRegion(region.name)}  className={styles.regionColumn}>
+                <div key={region.name} onClick={() => handleSelectRegion(region.name)}
+                className={`${styles.regionColumn} ${
+                  selectedRegion === region.name ? styles.selectedRegion : ""
+                }`}>
                   {region.name}
                 </div>
               ))
@@ -42,15 +63,22 @@ const RegionView = ({ regions }) => {
           </div>
           <div >
             {selectedRegion && (
-              <CityListView cities={regions.find((r) => r.name === selectedRegion)?.cities || []} />
+              <CityListView
+              cities={regions.find((r) => r.name === selectedRegion)?.cities || []}
+              selectedCities={selectedCities}
+              onSelectCity={handleSelectCity}
+            />
             )}
           </div>
         </div>
       </div>
       {selectedRegion && (
         <div>
-          <p>선택된 시.도: {selectedRegion}</p>
-        </div>
+        <p>선택된 시.도: {selectedRegion}</p>
+        {selectedCities.length > 0 && (
+          <p>선택된 도시: {selectedCities.join(", ")}</p>
+        )}
+      </div>
       )}
     </div>
   );

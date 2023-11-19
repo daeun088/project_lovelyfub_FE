@@ -1,10 +1,15 @@
+.table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .header {
     display: inline-flex;
-    width: 100%;
+    width: 360px;
     align-items: start;
     flex-shrink: 0;
     list-style: none;
-    //padding-right: 50px;
     color: var(--gray-scale-1, var(--sub-title, #313131));
     font-family: 'Pretendard-Regular';
     font-size: 14px;
@@ -21,7 +26,7 @@
     justify-content: center;
     align-items: start;
     gap: 8px;
-    width: 10%;
+    width: 53px;
     color: var(--gray-scale-1, var(--sub-title, #313131));
     font-family: 'Pretendard-Regular';
     font-size: 16px;
@@ -67,7 +72,7 @@
 
 .container {
     display: inline-flex;
-    width: 100%;
+    width: 360px;
     align-items: start;
     flex-shrink: 0;
     list-style: none;
@@ -79,19 +84,30 @@
     line-height: normal;
 }
 
+.selectedRegion {
+    border: 1px solid var(--gray-scale, #F3F3F3);
+    background: var(--orange2, #FF6F3C);
+    color: var(--white, #FFF);
+  }
+
 .cityList {
     list-style: none;
-    text-align: start;
-    height: 24px;
-    padding: 8px 24px;
-    justify-content: center;
-    align-items: start;
-    gap: 8px;
-    flex: 3;
-    color: var(--gray-scale-1, var(--sub-title, #313131));
-    font-family: 'Pretendard-Regular';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+    display: flex;
+    li {
+        display: flex;
+        padding: 9px 14px;
+        //border: 1px solid var(--gray-scale, #F3F3F3);
+        color: var(--gray-scale, var(--email, #9F9F9F));
+        font-family: 'Pretendard-Regular';
+        font-size: 16px;
+        font-weight: 500;
+        text-align: start;
+        &.active {
+            color: var(--orange2, #FF6F3C);
+          }
+    }
 }
+
+.selectedCity {
+    color: var(--orange2, var(--orange, #FF6F3C));
+  }
