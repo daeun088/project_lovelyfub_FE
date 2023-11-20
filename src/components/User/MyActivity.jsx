@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import styles from "./User.module.scss"
-import CafeModal from "../Cafe/CafeModal";
 import { useNavigate } from "react-router-dom";
 
 const MyActivity= ()=> {
@@ -38,21 +37,24 @@ const MyActivity= ()=> {
                     <div className={styles.notWishText}>아직 나의 활동이 없어요<br /><span className={styles.notWishText2}>리뷰를 적어볼까요?</span></div>
                     <button onClick={handleClick} className={styles.button}>리뷰 적기</button>
                 </div>*/
-                <div>hi
+                <div className={styles.bigContainer}>
+                <div className={styles.contentContainer}>
+                  <div className={styles.subTitle}>내가 작성한 게시물 </div>
+                  <div className={styles.gridContainer}>
+                    <img src={`/subImage.png`} alt="store" className={styles.gridItem}/>
+                    <img src={`/subImage.png`} alt="store" className={styles.gridItem}/>
+                    <img src={`/subImage.png`} alt="store" className={styles.gridItem}/>
+                    <img src={`/subImage.png`} alt="store" className={styles.gridItem}/>
+                    <img src={`/subImage.png`} alt="store" className={styles.gridItem}/>
+                    <img src={`/subImage.png`} alt="store" className={styles.gridItem}/>
+                    <img src={`/subImage.png`} alt="store" className={styles.gridItem}/>
+                    <img src={`/subImage.png`} alt="store" className={styles.gridItem}/>
+                    <img src={`/subImage.png`} alt="store" className={styles.gridItem}/>
+                  </div>
+                </div>
                 </div>
                 )}
             </div>
-
-            {selectedCafe && (
-                <CafeModal
-                cafe={selectedCafe}
-                closeModal={() => setSelectedCafe(null)}
-                mapInstance={null}
-                isModalOpen={true}
-                heartOnOff={heartOnOff}
-                setHeartOnOff={setHeartOnOff}
-                />
-            )}
         </div>
 
     )

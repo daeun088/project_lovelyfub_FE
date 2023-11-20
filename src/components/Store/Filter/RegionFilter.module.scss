@@ -111,3 +111,72 @@
 .selectedCity {
     color: var(--orange2, var(--orange, #FF6F3C));
   }
+
+  .choiceBlock{
+    margin-top: 50px;
+    border-top: 1px solid var(--gray-scale, #F3F3F3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .maxText {
+    color: var(--gray-scale, var(--email, #9F9F9F));
+    font-family: 'Pretendard-Regular';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+    display: flex;
+    width: 360px;
+    height: 30px;
+    padding: 8px 18px;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .choiceButton{
+    display: flex;
+    width: 340px;
+    height: 58px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border-radius: 10px;
+    background: var(--orange2, #FF6F3C);
+    color: var(--white, #FFF);
+    font-family: 'Pretendard-Regular';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    outline: none;
+  }
+  
+  .filterList {
+    display: flex;
+    width: auto;
+    padding: 8px 18px;
+    justify-content: left;
+    align-items: left;
+    gap: 8px;
+    li {
+      display: flex;
+      padding: 8px 14px;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      border-radius: 30px;
+      border: 1px solid var(--gray-scale, #D9D9D9);
+      background: var(--gray-scale, #F3F3F3);
+      color: var(--gray-scale2, var(--main-txt, #737373));
+      font-family: 'Pretendard-Regular';
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
