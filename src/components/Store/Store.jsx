@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import FilterModal from "./FilterModal";
 
-function Store() {
+const Store = () => {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   //const [selectedStore, setSelectedStore] = useState(null);
@@ -20,11 +20,28 @@ function Store() {
   };
 
   // 필터 적용
-  const applyFilter = (filter) => {
-    //setSelectedFilter(filter);
-    // 여기에서 선택한 필터에 따라 필터된 데이터를 가져오거나 다시 렌더링할 수 있습니다.
-  };
+  const applyFilter = (url) => {
 
+    axios
+    .get(`https://lovelyfub.com${url}`)
+      .then((response) => {
+        const storeData = response.data.data.map((store) => {
+          return {
+            id: store.storeid,
+            name: store.name,
+            profile: store.profile,
+            description: store.introduction,
+            category: store.category,
+            usertype: store.usertype,
+          };
+        });
+
+        // 선택한 필터에 따라 필터된 데이터로 업데이트
+        setData(storeData);
+        setPage((prevPage) => prevPage + 1); // 다음 페이지 번호 설정
+      })
+      .catch((error) => console.error("Error fetching filtered data:", error));
+  };
 
   const loadMoreData = () => {
     axios

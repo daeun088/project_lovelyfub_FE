@@ -51,6 +51,19 @@ const MyActivity= ()=> {
                     <img src={`/subImage.png`} alt="store" className={styles.gridItem}/>
                     <img src={`/subImage.png`} alt="store" className={styles.gridItem}/>
                   </div>
+                  <div className={styles.more}>+더보기</div>
+                </div>
+
+                <div className={styles.contentContainer}>
+                  <div className={styles.subTitle}>내가 찜한 게시물 </div>
+                  <div className={styles.gridContainer}>
+                    <img src={`/subImage.png`} alt="store" className={styles.gridItem}/>
+                    <img src={`/subImage.png`} alt="store" className={styles.gridItem}/>
+                    <img src={`/subImage.png`} alt="store" className={styles.gridItem}/>
+                    <img src={`/subImage.png`} alt="store" className={styles.gridItem}/>
+                    <img src={`/subImage.png`} alt="store" className={styles.gridItem}/>
+                    
+                  </div>
                 </div>
                 </div>
                 )}

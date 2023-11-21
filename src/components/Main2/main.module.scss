@@ -28,30 +28,39 @@
     padding: 0px 24px;
 }
 
-.lovelyContainer{
-    display: inline-flex;
-    align-items: flex-start;
-    gap: 14px;
+.lovelyContainer {
     display: grid;
-    margin: 12px;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(10, 1fr); /* 한 개의 행을 만듭니다. */
+    gap: 20px; /* 각 요소 사이의 간격을 설정합니다. */
+    width: 100%;
+    margin: 20px;
+    height: auto;
     overflow-x: scroll; /* 스크롤을 좌우로 움직이도록 설정합니다. */
-    overflow-y: hidden;
+    overflow-y: hidden; /* 상하 스크롤을 숨깁니다. */
     ::-webkit-scrollbar {
-        display: none; /* 스크롤바를 숨깁니다. */
-      }
-}
+      display: none; /* 스크롤바를 숨깁니다. */
+    }
+  }
+  
 
 .lovely{
     width: 79px;
     height: 79px;
     border-radius: 79px;
     border: 2px solid var(--orange, #FF6F3C);
-    background:lightgray 50% / cover no-repeat, var(--icon, #D9D9D9);
+}
+
+.containerLayout {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
 
 .feedContainer {
     display: relative;
+    width: 360px;
     padding: 12px 10px;
     flex-direction: column;
     align-items: flex-start;
@@ -61,6 +70,7 @@
     display: flex;
     align-items: center;
     flex-shrink: 0;
+    width: 100%;
   }
 
 .profilePic{
@@ -98,8 +108,8 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    position: absolute;
     right: 10px;
+    margin-left: 170px;
 }
 
 .feedImage {
@@ -108,6 +118,11 @@
     object-fit: cover;
     margin-top: 15px;
     margin-bottom: 7px;
+    background-color: var(--gray-scale, #f3f3f3);
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬을 위해 추가 */
+    justify-content: center;
+    overflow: hidden;
 }
 
 .bottomBar {
@@ -120,7 +135,7 @@
 }
 
 .bookmark {
-    position: absolute;
+    margin-left: 240px;
     right: 15px;
 }
 
@@ -139,7 +154,7 @@
 .feedText {
     color: #000;
     font-family: 'Pretendard-Regular';
-    font-size: 12px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -148,28 +163,28 @@
     padding: 12px 0px;
 }
 
-.storeName{
-    font-size: 16px;
-    font-weight: 500;
-}
-
-.coment {
+.comment {
+    display: flex;
     width: 96%;
     height: 30px;
-    flex-shrink: 0;
-    border-radius: 40px;
-    background: #F2F2F2;
     margin-left: 15px;
 }
 
-.comentText {
-    color: #CECECE;
-    text-align: center;
+.commentNickname {
+    color: var(--gray-scale2, var(--main-txt, #737373));
+    font-family: 'Pretendard-Regular';
+font-size: 12px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+margin-right: 14px;
+}
+
+.commentText {
+    color: var(--gray-scale2, var(--main-txt, #737373));
     font-family: 'Pretendard-Regular';
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    text-align: left;
-    padding: 8px 10px;
 }
