@@ -1,10 +1,12 @@
 import React, { useState, useRef } from "react";
 import styles from "./Content.module.scss";
+import { useNavigate } from "react-router-dom";
 
 function Content() {
   const [image, setImage] = useState(null);
   const [contentText, setContentText] = useState("");
   const fileInput = useRef(null);
+  const navigate = useNavigate();
 
   const handleImageChange = (e) => {
     const selectedImage = e.target.files[0];
@@ -14,6 +16,10 @@ function Content() {
       setImage(imageUrl);
     }
   };
+
+  function handleSearchClick() {
+    navigate('/content/search');
+}
 
   const handleButtonClick = () => {
     fileInput.current.click();
@@ -35,7 +41,7 @@ function Content() {
         </div>
       
       <div className={styles.contentLayout}>
-        <div className={styles.storeTag}>가게를 태그해주세요.</div>
+        <div className={styles.storeTag} onClick={handleSearchClick}>가게를 태그해주세요.</div>
         <div className={styles.rateScore}>별점을 선택해주세요.</div>
       </div>
       
